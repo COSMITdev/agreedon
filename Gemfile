@@ -20,6 +20,8 @@ gem "slim-rails", "~> 3.0.1"
 gem "activeadmin", github: "activeadmin"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
+gem "wicked"
+gem "nested_form"
 
 group :development do
   gem "quiet_assets"

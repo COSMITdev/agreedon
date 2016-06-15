@@ -16,3 +16,4 @@
 //= require init.js
 //= require_tree .
 //= require bootstrap
+//= require jquery_nested_form

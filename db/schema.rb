@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614203755) do
+ActiveRecord::Schema.define(version: 20160615192116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160614203755) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "agreements", force: :cascade do |t|
+    t.text     "description", default: "", null: false
+    t.string   "token",       default: "", null: false
+    t.string   "title",       default: "", null: false
+    t.string   "domain",      default: "", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -47,4 +56,28 @@ ActiveRecord::Schema.define(version: 20160614203755) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "roles", force: :cascade do |t|
+    t.integer  "agreement_id"
+    t.string   "role",         default: "", null: false
+    t.string   "email",        default: "", null: false
+    t.string   "id_number"
+    t.string   "full_name",    default: "", null: false
+    t.string   "full_address", default: "", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "roles", ["agreement_id"], name: "index_roles_on_agreement_id", using: :btree
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
+  add_foreign_key "roles", "agreements"
 end
