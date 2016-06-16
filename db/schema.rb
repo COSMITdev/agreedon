@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616002331) do
+ActiveRecord::Schema.define(version: 20160616174121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,21 +32,27 @@ ActiveRecord::Schema.define(version: 20160616002331) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "agreements", force: :cascade do |t|
-    t.text     "description",               default: "", null: false
-    t.string   "token",                     default: "", null: false
-    t.string   "title",                     default: "", null: false
-    t.string   "domain",                    default: "", null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "platforms",                 default: ""
-    t.text     "customers",                 default: ""
-    t.text     "princing_model",            default: ""
-    t.text     "actual_problem",            default: ""
-    t.text     "actual_solution",           default: ""
-    t.text     "proposed_solution",         default: ""
-    t.text     "value_proposition",         default: ""
-    t.text     "how_customers_spend_time",  default: ""
-    t.text     "product_offered_solutions", default: ""
+    t.text     "description",                default: "", null: false
+    t.string   "token",                      default: "", null: false
+    t.string   "title",                      default: "", null: false
+    t.string   "domain",                     default: "", null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "platforms",                  default: ""
+    t.text     "customers",                  default: ""
+    t.text     "princing_model",             default: ""
+    t.text     "actual_problem",             default: ""
+    t.text     "actual_solution",            default: ""
+    t.text     "proposed_solution",          default: ""
+    t.text     "value_proposition",          default: ""
+    t.text     "how_customers_spend_time",   default: ""
+    t.text     "product_offered_solutions",  default: ""
+    t.string   "market_size",                default: ""
+    t.text     "mainly_competitors",         default: ""
+    t.text     "indirect_competitors",       default: ""
+    t.text     "how_to_validate_market",     default: ""
+    t.text     "main_competitive_advantage", default: ""
+    t.text     "validations_for_the_launch", default: ""
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
