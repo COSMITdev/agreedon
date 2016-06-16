@@ -10,17 +10,17 @@
     padding: 20px;
   }
   .success.wrapper, .notice.wrapper {
-    background-color: $success;
+    background-color: green;
   }
   .failure.wrapper, .alerts-error.wrapper, .alerts-error.wrapper {
-    background-color: $error;
+    background-color: red;
   }
   .locale.wrapper {
-    background-color: $info;
+    background-color: yellow;
   }
   .warning.wrapper {
     color: $black;
-    background-color: $yellow;
+    background-color: yellow;
   }
 }
 
