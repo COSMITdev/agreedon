@@ -1,8 +1,20 @@
 h1 This is the Product Details pages
-- @agreement.attributes.each do |field, value|
-  = value
-  br
 
-hr
+= simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+  = f.input :platforms, placeholder: "iOS, Android, Desktop, Web"
+  = f.input :customers
+  = f.input :princing_model
+  = f.input :actual_problem
+  = f.input :actual_solution
+  = f.input :proposed_solution, placeholder: "The solution that my Product propose"
+  = f.input :value_proposition, placeholder: "My Product's value proposition"
+  = f.input :how_customers_spend_time
+  = f.input :product_offered_solutions, placeholder: "The solutions my Product offers"
 
-= link_to 'Previous', previous_wizard_path
+  hr
+
+  .col-sm-12.col-md-6
+    = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
+
+  .col-sm-12.col-md-6.text-right
+    = f.submit 'Next Step', class: 'btn btn-success'

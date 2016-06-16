@@ -1,7 +1,7 @@
 class AgreementController < ApplicationController
   include Wicked::Wizard
 
-  steps :team, :product
+  steps :team, :product, :market
 
   def show
     # search for a session hash
@@ -39,7 +39,10 @@ class AgreementController < ApplicationController
   end
 
   def agreement_params
-    params.require(:agreement).permit(:title, :description, :domain,
+    params.require(:agreement).permit(:title, :description, :domain, :platforms,
+                                      :customers, :princing_model, :actual_problem,
+                                      :actual_solution, :proposed_solution, :value_proposition,
+                                      :how_customers_spend_time, :product_offered_solutions,
                                       roles_attributes: [:id, :full_name, :email,
                                                          :full_address, :id_number, :role,
                                                          :_destroy])
