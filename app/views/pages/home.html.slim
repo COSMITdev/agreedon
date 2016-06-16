@@ -1,17 +1,18 @@
 section.pageHero
-  .container
-    .row
-      .col-sm-12.col-md-9.u-centered.u-textCenter
-        .heroContainer
-          .u-verticalAlign
-            .row
-              .col-sm-10.u-centered
-                h1.u-noMargin Early project Agreements
-                .row
-                  .col-sm-10.col-md-8.u-centered
-                    h3.u-textLight.u-marginTop10 We help you to create your initial project agreement so you can be safe all the time
-                = link_to 'Get started now', '', class: 'btn -lg -primary u-marginTop40'
-                .heroHint.u-marginTop10 No sign up required!
+  .heroContainer.u-textCenter
+    .pageHeroLft
+      = image_tag('bg-left.png')
+    .pageHeroRgt
+      = image_tag('bg-right.png')
+    .u-verticalAlign
+      .row
+        .col-sm-10.u-centered
+          h1.u-noMargin Early project Agreements
+          .row
+            .col-sm-8.col-md-6.u-centered
+              h3.u-textLight.u-marginTop10 We help you to create your initial project agreement so you can be safe all the time
+          = link_to 'Get started now', '', class: 'btn -lg -primary u-marginTop40'
+          .heroHint.u-marginTop10 No sign up required!
 
 section.about
   .container

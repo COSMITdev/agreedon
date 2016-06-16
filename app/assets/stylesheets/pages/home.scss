@@ -1,11 +1,38 @@
 // # Page Hero
 // # =================================================================
 .pageHero {
-  // background-color: $gray-light;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   overflow: hidden;
+
+  .pageHeroLft,
+  .pageHeroRgt {
+    display: absolute;
+    width: 50%;
+  }
+
+  .pageHeroLft {
+    float: left;
+
+    img {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .pageHeroRgt {
+    float: right;
+
+    img {
+      right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 
   .heroContainer {
     height: 75vh;
