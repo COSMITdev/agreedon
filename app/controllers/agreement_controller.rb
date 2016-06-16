@@ -43,6 +43,9 @@ class AgreementController < ApplicationController
                                       :customers, :princing_model, :actual_problem,
                                       :actual_solution, :proposed_solution, :value_proposition,
                                       :how_customers_spend_time, :product_offered_solutions,
+                                      :market_size, :mainly_competitors, :indirect_competitors,
+                                      :how_to_validate_market, :main_competitive_advantage,
+                                      :validations_for_the_launch,
                                       roles_attributes: [:id, :full_name, :email,
                                                          :full_address, :id_number, :role,
                                                          :_destroy])
