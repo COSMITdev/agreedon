@@ -1,0 +1,13 @@
+h1 This is the Aditional Informations page
+
+= simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+  = f.input :aditional_rules
+  = f.input :validation_of_the_agreement
+
+  hr
+
+  .col-sm-12.col-md-6
+    = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
+
+  .col-sm-12.col-md-6.text-right
+    = f.submit 'Preview', class: 'btn btn-success'

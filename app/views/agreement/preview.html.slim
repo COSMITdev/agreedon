@@ -1,0 +1,9 @@
+h1 This is the Preview page!!
+
+= link_to 'Print this preview!', '#', onclick: 'window.print();return false;', class: 'btn btn-success'
+
+table.table
+  - @agreement.attributes.each do |attribute, value|
+    tr
+      td = attribute
+      td = value
