@@ -1,5 +1,5 @@
 nav.navbar.navbar-default
-  .container-fluid
+  div class="container#{'-fluid' if params[:controller] != 'pages'}"
     .navbar-header
       a.navbar-brand href="#" Agreedon
       ul.nav.navbar-nav.navbar-right.u-floatRgt
