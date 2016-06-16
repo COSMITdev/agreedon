@@ -19,6 +19,22 @@
 
   .heroHint {
     color: $gray-medium;
-    font-size: 0.8125;
+    font-size: 0.875rem;
+  }
+}
+
+// # Page Hero
+// # =================================================================
+section.about {
+  padding: 10px 0 70px;
+
+  .fa {
+    font-size: 3.8125rem;
+    color: $blue;
+  }
+
+  .aboutTxt {
+    font-size: 0.875rem;
+    color: $gray-dark;
   }
 }
