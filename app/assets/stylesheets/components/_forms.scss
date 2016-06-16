@@ -10,8 +10,6 @@ textarea,
 button[data-toggle="dropdown"] {
   appearance: none;
   background-color: white;
-  border: 2px solid $gray-blue-light !important;
-  border-radius: $globalRadius !important;
   box-shadow: none !important;
   box-sizing: border-box;
   outline: 0;
@@ -37,7 +35,6 @@ textarea {
 
   &:active,
   &:focus {
-    border: 2px solid $brand !important;
   }
 
   &.-big {
