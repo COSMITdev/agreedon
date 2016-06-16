@@ -3,39 +3,41 @@
 // # =================================================================
 .navbar {
   border: none;
-  height: 45px;
+  height: 85px;
   min-height: auto;
   margin-bottom: 0;
   z-index: 1000;
 
   .navbar-brand {
-    color: white;
-    height: 45px;
-    padding: 11px 15px 14px;
-    font-weight: 700;
+    color: $black;
+    height: 85px;
+    padding: 30px 15px 34px;
+    font-weight: 600;
+    font-size: 1.5rem;
 
     &:hover,
     &:focus {
-    transition: all .2s;
+      color: $blue;
+      transition: all .2s;
     }
   }
 }
 
 .navbar-default {
   border-radius: 0;
+  background-color: white;
+  border-bottom: 1px solid $gray;
 
   .navbar-nav > li > a {
-    color: white;
-    padding: 6px 13px 7px;
-    margin-top: 5px;
-    margin-left: 5px;
+    color: $gray-dark;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 32px 15px 32px;
+    margin-right: -15px;
 
     &:hover,
     &:focus {
-      color: white;
-    }
-
-    &.active {
+      color: $blue;
     }
   }
 
