@@ -14,11 +14,10 @@ html
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png'
 
-  body.site
+  body class="#{params[:action]}"
     = initjs_tag 'AgreeMe'
     = render 'layouts/flash'
     = render 'partials/header'
-    .site-content
-      = yield
+    = yield
     = render 'partials/footer'
     = render 'partials/javascripts'
