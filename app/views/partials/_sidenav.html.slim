@@ -5,23 +5,27 @@ nav
   .navSteps.u-marginTop30
     ul
       li
-        = link_to wizard_path(:team), class: ('active' if request.path == wizard_path(:team)) do
+        = link_to wizard_path(:intro), class: ('active' if request.path == wizard_path(:intro)) do
           span.stepNumber 1
+          span.stepTxt Product Intro
+      li
+        = link_to wizard_path(:team), class: ('active' if request.path == wizard_path(:team)) do
+          span.stepNumber 2
           span.stepTxt Team
       li
         = link_to wizard_path(:product), class: ('active' if request.path == wizard_path(:product)) do
-          span.stepNumber 2
-          span.stepTxt Product Detail
+          span.stepNumber 3
+          span.stepTxt Product Details
       li
         = link_to wizard_path(:market), class: ('active' if request.path == wizard_path(:market)) do
-          span.stepNumber 3
+          span.stepNumber 4
           span.stepTxt Market
       li
         = link_to wizard_path(:aditional), class: ('active' if request.path == wizard_path(:aditional)) do
-          span.stepNumber 4
+          span.stepNumber 5
           span.stepTxt Legal
       li
         = link_to wizard_path(:preview), class: ('active' if request.path == wizard_path(:preview)) do
-          span.stepNumber 5
+          span.stepNumber 6
           span.stepTxt Preview
 
