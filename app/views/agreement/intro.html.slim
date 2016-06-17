@@ -9,10 +9,8 @@
       .row
         .col-sm-12.col-md-10
           = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
-            - if f.object.errors.any?
-              - f.object.errors.each do |error, message|
-                span.label.label-danger = "#{error} #{message}"
             .form-inputs
+              = f.hidden_field :step, value: step.to_s
               .form-group
                 = f.input :title, autofocus: true, label: 'Project Name', placeholder: 'Current name of your project'
               .form-group
