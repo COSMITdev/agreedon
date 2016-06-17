@@ -5,12 +5,14 @@
       = render 'partials/sidenav'
     / main content
     .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
-      h2 This is the Preview page!!
-
-      = link_to 'Print this preview!', '#', onclick: 'window.print();return false;', class: 'btn btn-success'
-
-      table.table
-        - @agreement.attributes.each do |attribute, value|
-          tr
-            td = attribute
-            td = value
+      h2.u-noMargin.u-marginTop20.u-marginBot30 title="Preview of the document" Preview of the document
+      .row
+        .col-sm-12.col-md-10
+          ul
+            - @agreement.attributes.each do |attribute, value|
+              li 
+                | #{attribute}: #{value}
+          .form-actions.u-marginTop30
+            = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
+            = link_to 'Export PDF', '#', title:'Export PDF', class: 'btn -md -primary u-floatRgt u-marginLft20'
+            = link_to 'Print / Save', '#', onclick: 'window.print();return false;', title:'Print / Save', class: 'btn -md -primary u-floatRgt'
