@@ -1,9 +1,36 @@
 class Agreement < ActiveRecord::Base
+  attr_accessor :step
+
   has_many :roles
 
   accepts_nested_attributes_for :roles, allow_destroy: true
 
-  validates :roles, presence: true
-  validates :title, :description, :domain, :platforms, :actual_problem, :proposed_solution,
-            :value_proposition, :product_offered_solutions, presence: true
+  validates :title, :description, :domain, presence: true, if: :on_intro_step?
+  validate :at_least_one_step, if: :on_team_step?
+
+  protected
+
+  def on_intro_step?
+    self.step == 'intro'
+  end
+
+  def on_team_step?
+    self.step == 'team'
+  end
+
+  def on_product_step?
+    self.step == 'product'
+  end
+
+  def on_market_step?
+    self.step == 'market'
+  end
+
+  def on_legal_step?
+    self.step == 'legal'
+  end
+
+  def at_least_one_step
+    errors.add(:base, 'You must provide at least one role!') if self.roles.blank?
+  end
 end

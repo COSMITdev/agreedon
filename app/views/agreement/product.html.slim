@@ -8,6 +8,7 @@
       h2 This is the Product Details pages
 
       = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+        = f.hidden_field :step, value: step.to_s
         = f.input :platforms, placeholder: "iOS, Android, Desktop, Web"
         = f.input :customers
         = f.input :princing_model

@@ -9,6 +9,7 @@
       h2 This is the Aditional Informations page
 
       = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+        = f.hidden_field :step, value: step.to_s
         = f.input :aditional_rules
         = f.input :validation_of_the_agreement
 

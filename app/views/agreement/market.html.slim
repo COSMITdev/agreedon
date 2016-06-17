@@ -8,6 +8,7 @@
       h2 This is the Market pages
 
       = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+        = f.hidden_field :step, value: step.to_s
         = f.input :market_size
         = f.input :mainly_competitors
         = f.input :indirect_competitors

@@ -5,17 +5,13 @@
       = render 'partials/sidenav'
     / main content
     .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
-      h2 First Step
+      h2 Second Step
       = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
         - if f.object.errors.any?
-          - f.object.errors.each do |error, message|
-            span.label.label-danger = "#{error} #{message}"
+          span.label.label-danger = f.object.errors.messages[:base]
         
-        = f.input :title
-        = f.input :description, as: :text
-        = f.input :domain
-        
-        h2 TEAM
+        / This field is to check the current step of the form
+        = f.hidden_field :step, value: step.to_s
         
         = f.simple_fields_for :roles, @agreement.roles do |c|
           = c.input :full_name
@@ -30,4 +26,8 @@
 
         br
 
-        = f.submit "Next Step"
+        .col-sm-12.col-md-6
+          = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
+
+        .col-sm-12.col-md-6.text-right
+          = f.submit 'Next Step', class: 'btn btn-success'
