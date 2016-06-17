@@ -2,5 +2,12 @@ section.footer
   .container-fluid
     .row
       .col-md-10.u-centered
-        = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'footerBrand u-floatLeft'
-        = link_to 'About', about_path, title: 'About us', class: 'footerLink u-floatRgt'
+        u-floatLeft
+          = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'footerBrand'
+        .u-floatRgt
+          = link_to 'About', about_path, title: 'About us', class: 'footerLink'
+          span.u-textGray-light
+            | Made with 
+            i.fa.fa-heart-o
+            |  by 
+            = link_to 'COSMIT', 'http://cosmit.me', title: 'Know us!', class: 'u-linkInverse'
