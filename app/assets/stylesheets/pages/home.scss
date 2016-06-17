@@ -48,6 +48,10 @@
     color: $gray-medium;
     font-size: 0.875rem;
   }
+
+  .u-verticalAlign {
+    padding: 0 30px;
+  }
 }
 
 // # Page About
@@ -63,5 +67,28 @@ section.about {
   .aboutTxt {
     font-size: 0.875rem;
     color: $gray-dark;
+  }
+}
+
+// # Media Query
+// # =================================================================
+@media (max-width: 769px) {
+  .heroContainer {
+    height: 60vh !important;
+  }
+
+  .pageHero .pageHeroRgt img {
+    right: -25%;
+  }
+
+  .pageHero .pageHeroLft img {
+    left: -25%;
+  }
+}
+
+@media (max-width: 700px) {
+  .pageHero .pageHeroRgt img,
+  .pageHero .pageHeroLft img {
+    display: none;
   }
 }

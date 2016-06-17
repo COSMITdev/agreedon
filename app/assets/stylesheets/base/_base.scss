@@ -11,6 +11,7 @@ body {
 
 a {
   transition: all .2s;
+  color: $blue;
 
   &:hover,
   &:focus {
@@ -20,4 +21,14 @@ a {
 
 ul {
   list-style: none; 
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.siteContent {
+  flex: 1;
 }

@@ -1,3 +1,22 @@
-h1 About
-
-= render 'partials/footer'
+.container
+  .row
+    / main content
+    .col-sm-8.col-md-6.u-centered
+      h1.u-marginTop50 About
+      div
+        p 
+          | This project was created by 
+          = link_to 'COSMIT', 'http://cosmit.me', target: '_blank'
+          |  team in <strong>one week</strong> in collaboration with 
+          = link_to 'Pedram Daraeizadeh', 'http://www.pedramdaraeizadeh.com/', target: '_blank' 
+          | during a week of plan, design and development. This a mvp project.
+        p
+          | You can find the code on our 
+          = link_to 'Github repository', 'https://github.com/COSMITdev/agreeme.git', target: '_blank'
+          | .
+        p
+          | If you have any question or want to know more about us you can go to our 
+          = link_to 'website', 'http://cosmit.me', target: '_blank'
+          |  or send us an email at 
+          = mail_to 'hi@cosmit.me', 'hi@cosmit.me'
+          | .

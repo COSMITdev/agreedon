@@ -5,24 +5,28 @@
       = render 'partials/sidenav'
     / main content
     .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
-      h2 This is the Product Details pages
-
-      = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
-        = f.hidden_field :step, value: step.to_s
-        = f.input :platforms, placeholder: "iOS, Android, Desktop, Web"
-        = f.input :customers
-        = f.input :princing_model
-        = f.input :actual_problem
-        = f.input :actual_solution
-        = f.input :proposed_solution, placeholder: "The solution that my Product propose"
-        = f.input :value_proposition, placeholder: "My Product's value proposition"
-        = f.input :how_customers_spend_time
-        = f.input :product_offered_solutions, placeholder: "The solutions my Product offers"
-
-        hr
-
-        .col-sm-12.col-md-6
-          = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
-
-        .col-sm-12.col-md-6.text-right
-          = f.submit 'Next Step', class: 'btn btn-success'
+      h2.u-noMargin.u-marginTop20.u-marginBot30 title="Product Details" Product Details
+      .row
+        .col-sm-12.col-md-10
+          = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+            = f.hidden_field :step, value: step.to_s
+            .form-inputs
+              .form-group
+                = f.input :customers, autofocus: true, placeholder: 'Who are your customers? Designers, from Toronto...'
+              .form-group
+                = f.input :how_customers_spend_time, placeholder: 'Where they spend time? Social media, university...'
+              .form-group
+                = f.input :actual_problem, placeholder: "Problem that you're trying to solve"
+              .form-group
+                = f.input :proposed_solution, placeholder: 'What my product offer as a solution'
+              .form-group
+                = f.input :actual_solution, placeholder: 'How people solve this problem today?'
+              .form-group
+                = f.input :value_proposition, placeholder: "My UVP. Community? Pattent?"
+              .form-group
+                = f.input :platforms, placeholder: 'iOS, Android, Desktop, Web'
+              .form-group
+                = f.input :princing_model
+            .form-actions.u-marginTop30
+              = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
+              = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'
