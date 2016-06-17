@@ -51,3 +51,16 @@ textarea {
     min-height: 260px;
   }
 }
+
+.has-error {
+  input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  button[data-toggle="dropdown"] {
+    border: 2px solid #d9534f !important;
+  }
+
+  .help-block {
+    font-size: 80%;
+  }
+}
