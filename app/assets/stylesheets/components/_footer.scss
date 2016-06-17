@@ -28,3 +28,21 @@ section.footer {
     padding: 28px 15px 28px;
   }
 }
+
+@media (max-width: 768px) {
+  section.footer {
+    text-align: center;
+
+    .footerBrand {
+      padding-bottom: 5px;
+    }
+
+    .footerLink {
+      padding-top: 10px;
+    }
+
+    .u-floatRgt {
+      float: none !important;
+    }
+  }
+}

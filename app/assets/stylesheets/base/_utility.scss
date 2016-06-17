@@ -148,3 +148,9 @@
 .u-hide {
   display: none;
 }
+
+.u-noPrint {
+  @media print {
+    display: none !important;
+  }
+}

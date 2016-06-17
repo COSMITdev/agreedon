@@ -73,3 +73,24 @@
     border-bottom: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    .navbar-nav > li > a {
+      margin-right: -20px;
+    }
+
+    .navbar-brand {
+      padding-left: 30px;
+    }
+  }
+
+  .navbar .container-fluid {
+    padding-right: 0px;
+    padding-left: 25px;
+
+    .navbar-nav > li > a {
+      margin-right: -5px;
+    }
+  }
+}
