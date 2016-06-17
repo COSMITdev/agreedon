@@ -31,6 +31,7 @@
 
   .navbar-nav {
     margin: 0;
+
     & > li > a {
       color: $gray-dark;
       font-size: 0.8125rem;
@@ -48,6 +49,22 @@
   .container-fluid {
     padding-right: 45px;
     padding-left: 40px;
+  }
+
+  &.-internal {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .navbar-brand {
+      height: 60px;
+      padding: 18px 15px 17px;
+    }
+
+    .navbar-nav > li > a {
+      padding: 20px 15px 20px;
+    }
   }
 }
 
