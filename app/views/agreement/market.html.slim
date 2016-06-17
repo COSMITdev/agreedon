@@ -5,21 +5,24 @@
       = render 'partials/sidenav'
     / main content
     .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
-      h2 This is the Market pages
-
-      = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
-        = f.hidden_field :step, value: step.to_s
-        = f.input :market_size
-        = f.input :mainly_competitors
-        = f.input :indirect_competitors
-        = f.input :how_to_validate_market
-        = f.input :main_competitive_advantage
-        = f.input :validations_for_the_launch
-
-        hr
-
-        .col-sm-12.col-md-6
-          = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
-
-        .col-sm-12.col-md-6.text-right
-          = f.submit 'Next Step', class: 'btn btn-success'
+      h2.u-noMargin.u-marginTop20.u-marginBot30 title="Market Details" Market Details
+      .row
+        .col-sm-12.col-md-10
+          = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+            = f.hidden_field :step, value: step.to_s
+            .form-inputs
+              .form-group
+                = f.input :market_size
+              .form-group
+                = f.input :mainly_competitors
+              .form-group
+                = f.input :indirect_competitors
+              .form-group
+                = f.input :how_to_validate_market
+              .form-group
+                = f.input :main_competitive_advantage
+              .form-group
+                = f.input :validations_for_the_launch
+            .form-actions.u-marginTop30
+              = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
+              = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'
