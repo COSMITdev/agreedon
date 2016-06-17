@@ -8,6 +8,7 @@
   border: 0;
   white-space: normal;
   transition: all .2s;
+  font-weight: 700;
 
   // # Sizes
   // # ===========
@@ -17,7 +18,7 @@
   }
 
   &.-lg {
-    padding: 10px 20px;
+    padding: 17px 30px 18px;
     font-size: 1.125rem;
   }
 
@@ -31,23 +32,15 @@
   // # Colors
   // # ===========
   &.-primary {
-    background-color: $brand;
-    color: white;
+    color: $blue;
+    border: 2px solid $blue;
+    border-radius: $globalRadius;
 
     &:hover,
     &:focus {
-      background-color: darken($brand, 20%);
-    }
-  }
-
-  &.-default {
-    background-color: #f2f2f2;
-    color: $gray;
-
-    &:hover,
-    &:focus {
-      background-color: #ccc;
-      color: $black;
+      color: white;
+      background-color: $blue;
+      transition: all .2s;
     }
   }
 }

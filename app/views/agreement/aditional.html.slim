@@ -1,13 +1,21 @@
-h1 This is the Aditional Informations page
+.container-fluid
+  .row
+    / sidenav (left)
+    .col-sm-4.col-md-3.hidden-xs.sideNav
+      = render 'partials/sidenav'
+    / main content
+    .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
 
-= simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
-  = f.input :aditional_rules
-  = f.input :validation_of_the_agreement
+      h2 This is the Aditional Informations page
 
-  hr
+      = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
+        = f.input :aditional_rules
+        = f.input :validation_of_the_agreement
 
-  .col-sm-12.col-md-6
-    = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
+        hr
 
-  .col-sm-12.col-md-6.text-right
-    = f.submit 'Preview', class: 'btn btn-success'
+        .col-sm-12.col-md-6
+          = link_to 'Previous', previous_wizard_path, class: 'btn btn-warning'
+
+        .col-sm-12.col-md-6.text-right
+          = f.submit 'Preview', class: 'btn btn-success'

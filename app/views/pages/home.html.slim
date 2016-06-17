@@ -1,0 +1,32 @@
+section.pageHero
+  .heroContainer.u-textCenter
+    .pageHeroLft
+      = image_tag('bg-left.png')
+    .pageHeroRgt
+      = image_tag('bg-right.png')
+    .u-verticalAlign
+      .row
+        .col-sm-10.u-centered
+          h1.u-noMargin Early project Agreements
+          .row
+            .col-sm-8.col-md-6.u-centered
+              h3.u-textLight.u-marginTop10 We help you to create your initial project agreement so you can be safe all the time
+          = link_to 'Get started now', agreement_index_path, title: 'Get started now', class: 'btn -lg -primary u-marginTop40'
+          .heroHint.u-marginTop10 No sign up required!
+
+section.about
+  .container
+    .row
+      .col-sm-12.col-md-10.u-centered.u-textCenter
+        h2.u-marginBot45 Simple and easy to use
+        .row
+          .col-sm-4.col-sm-offset-2
+            i.fa.fa-file-text-o
+            h3 Create the document
+            p.aboutTxt Lorem ipsum dolor sit amet, consectetuer adipiscing elit adipiscing elit.
+          .col-sm-4
+            i.fa.fa-thumbs-o-up
+            h3 Everyone signs it
+            p.aboutTxt Lorem ipsum dolor sit amet, consectetuer adipiscing elit adipiscing elit.
+
+= render 'partials/footer'

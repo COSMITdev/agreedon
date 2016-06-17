@@ -1,23 +1,11 @@
 // # =================================================================
-// # Base
+// # Main content
 // # =================================================================
 
-// # Height
+// # General
 // # =================================================================
-html,
-body {
-  height: 100%;
-}
-
-a {
-  transition: all .2s;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-}
-
-ul {
-  list-style: none; 
+.mainContent {
+  padding: 30px 60px 60px;
+  background-color: $gray-light;
+  height: calc(100vh - 85px);
 }
