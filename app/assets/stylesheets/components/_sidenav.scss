@@ -21,3 +21,61 @@
     padding: 0;
   }
 }
+
+.navSteps {
+  a {
+    display: table;
+    width: 100%;
+    color: $inactive;
+    margin-bottom: 7px;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+      transition: all .2s;
+
+      .stepNumber {
+        border-color: $blue;
+        background-color: $blue;
+        color: white;
+        transition: background-color .7s !important;
+        transition: border-color .5s !important;
+        transition: color .1s !important;
+      }
+    }
+
+    &.active {
+      color: $blue;
+
+      .stepNumber {
+        border-color: $blue;
+      }
+
+      &:hover,
+      &:focus {
+        .stepNumber {
+          border: 2px solid $blue;
+          background-color: transparent;
+          color: $blue;
+        }
+      }
+    }
+
+    .stepNumber {
+      border: 2px solid $inactive;
+      border-radius: 25px;
+      height: 45px;
+      width: 45px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .stepTxt {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 8px;
+      font-size: 1.125rem;
+    }
+  }
+}

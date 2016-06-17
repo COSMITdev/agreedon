@@ -1,16 +1,26 @@
 nav
   .navInfo
     h2 Some info
-  .navSteps
+  .navSteps.u-marginTop30
     ul
       li
-        = link_to 'Team', wizard_path(:team)
+        = link_to wizard_path(:team), class: ('active' if request.path == wizard_path(:team)) do
+          span.stepNumber 1
+          span.stepTxt Team
       li
-        = link_to 'Product', wizard_path(:product)
+        = link_to wizard_path(:product), class: ('active' if request.path == wizard_path(:product)) do
+          span.stepNumber 2
+          span.stepTxt Product Detail
       li
-        = link_to 'Market', wizard_path(:market)
+        = link_to wizard_path(:market), class: ('active' if request.path == wizard_path(:market)) do
+          span.stepNumber 3
+          span.stepTxt Market
       li
-        = link_to 'Aditional', wizard_path(:aditional)
+        = link_to wizard_path(:aditional), class: ('active' if request.path == wizard_path(:aditional)) do
+          span.stepNumber 4
+          span.stepTxt Legal
       li
-        = link_to 'Preview', wizard_path(:preview)
+        = link_to wizard_path(:preview), class: ('active' if request.path == wizard_path(:preview)) do
+          span.stepNumber 5
+          span.stepTxt Preview
 
