@@ -10,27 +10,37 @@ textarea,
 button[data-toggle="dropdown"] {
   appearance: none;
   background-color: white;
+  border: 2px solid $gray !important;
   box-shadow: none !important;
   box-sizing: border-box;
   outline: 0;
-  padding: 5px 10px;
-  min-height: 45px;
-  width: 100%;
+  padding: 5px 10px 6px;
+  min-height: 50px;
 
   &.-block {
     width: 100% !important;
   }
+
+  &:focus,
+  &:active {
+    border: 2px solid $blue !important;
+  }
 }
 
 ::placeholder {
-  color: #ccc !important;
+  color: #d8d8d8 !important;
+  font-weight: 400;
+}
+
+label {
+  color: $gray-dark;
 }
 
 // # Textarea
 // # =================================================================
 textarea {
   background-color: white;
-  min-height: 80px;
+  min-height: 100px;
   width: 100%;
 
   &:active,
