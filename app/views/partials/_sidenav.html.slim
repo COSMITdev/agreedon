@@ -3,5 +3,14 @@ nav
     h2 Some info
   .navSteps
     ul
-      - 3.times do
-        li Step one
+      li
+        = link_to 'Team', wizard_path(:team)
+      li
+        = link_to 'Product', wizard_path(:product)
+      li
+        = link_to 'Market', wizard_path(:market)
+      li
+        = link_to 'Aditional', wizard_path(:aditional)
+      li
+        = link_to 'Preview', wizard_path(:preview)
+
