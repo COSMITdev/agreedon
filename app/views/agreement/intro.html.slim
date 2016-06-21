@@ -12,10 +12,10 @@
             .form-inputs
               = f.hidden_field :step, value: step.to_s
               .form-group
-                = f.input :title, autofocus: true, label: 'Project Name', placeholder: 'Current name of your project'
+                = f.input :title, autofocus: true, placeholder: "What is the preliminary or permanent name of the product?"
               .form-group
-                = f.input :domain, label: 'Project domain, if it has one', placeholder: 'http://www.myproject.com'
+                = f.input :domain, placeholder: "What is the purchased or proposed domain of the product?"
               .form-group
-                = f.input :description, as: :text, label: 'Describe it shortly', placeholder: 'As if you were explaining it to a stranger'
+                = f.input :description, as: :string, placeholder: "How do you describe the product in 140 characters or less?"
             .form-actions.u-marginTop30
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'

@@ -12,17 +12,17 @@
             = f.hidden_field :step, value: step.to_s
             .form-inputs
               .form-group
-                = f.input :market_size
+                = f.input :market_size, placeholder: "What is the local and global size of the market?"
               .form-group
-                = f.input :mainly_competitors
+                = f.input :mainly_competitors, placeholder: "Who are the companies already in the space?"
               .form-group
-                = f.input :indirect_competitors
+                = f.input :indirect_competitors, placeholder: "Who else can or could compete with you?"
               .form-group
-                = f.input :how_to_validate_market
+                = f.input :how_to_validate_market, placeholder: "How are you going to validate the market need?"
               .form-group
-                = f.input :main_competitive_advantage
+                = f.input :main_competitive_advantage, placeholder: "How do you plan to compete with your competitors?"
               .form-group
-                = f.input :validations_for_the_launch
+                = f.input :validations_for_the_launch, placeholder: "How you gonna validate your Product before launch?"
             .form-actions.u-marginTop30
               = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'

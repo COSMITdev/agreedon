@@ -29,6 +29,7 @@
                 = c.input :_destroy, as: :boolean, label: 'Remove?'
                 hr
             = f.link_to_add 'Add a team member', :roles, class: 'btn -sm -primary'
+            
             .form-actions.u-marginTop30
               = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'

@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    models:
+      agreement:
+        one: Agreement
+        other: Agreements
+
+    attributes:
+      agreement:
+        title: 'Product Name'
+        domain: 'Product Domain'
+        platforms: 'Launching Platform(s)'
+        customers: 'Potential Customers'
+        description: 'Product Description'
+        market_size: 'Market Size'
+        princing_model: 'Pricing Model'
+        actual_problem: 'Actual Problem'
+        actual_solution: 'Actual Solution(s)'
+        aditional_rules: 'Aditional Terms'
+        proposed_solution: 'Proposed Solution'
+        value_proposition: 'Unique Seling Point'
+        mainly_competitors: 'Main Competitors'
+        indirect_competitors: 'Indirect Competitors'
+        how_to_validate_market: 'Market Validation'
+        how_customers_spend_time: 'How Customers spend their time'
+        product_offered_solutions: ''
+        main_competitive_advantage: 'Competitive Advantage'
+        validations_for_the_launch: 'Initial Validations'
+        validation_of_the_agreement: 'Validation Period'

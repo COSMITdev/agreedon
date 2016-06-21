@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      role:
+        one: Team Member
+        other: Team Memberss
+
+    attributes:
+      role:
+        role: 'Accepting Roles'
+        email: 'Email Address'
+        id_number: 'ID Number'
+        full_name: 'First and Last Names'
+        full_address: 'Mailing Address'

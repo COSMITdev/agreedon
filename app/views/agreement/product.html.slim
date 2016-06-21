@@ -12,21 +12,19 @@
             = f.hidden_field :step, value: step.to_s
             .form-inputs
               .form-group
-                = f.input :customers, autofocus: true, placeholder: 'Who are your customers? Designers, from Toronto...'
+                = f.input :customers, autofocus: true, placeholder: "Who exactly are the people with a problem you wish to solve?"
               .form-group
-                = f.input :how_customers_spend_time, placeholder: 'Where they spend time? Social media, university...'
+                = f.input :actual_problem, placeholder: "What specific pain do these people suffer from?"
               .form-group
-                = f.input :actual_problem, placeholder: "Problem that you're trying to solve"
+                = f.input :actual_solution, placeholder: "How do these people currently overcome their problem?"
               .form-group
-                = f.input :proposed_solution, placeholder: 'What my product offer as a solution'
+                = f.input :proposed_solution, placeholder: "How do you plan to solve your customer’s problem?"
               .form-group
-                = f.input :actual_solution, placeholder: 'How people solve this problem today?'
+                = f.input :value_proposition, placeholder: "What is your product’s core value proposition?"
               .form-group
-                = f.input :value_proposition, placeholder: "My UVP. Community? Pattent?"
+                = f.input :platforms, placeholder: "iOS, Android, Desktop, Web"
               .form-group
-                = f.input :platforms, placeholder: 'iOS, Android, Desktop, Web'
-              .form-group
-                = f.input :princing_model
+                = f.input :princing_model, placeholder: "Free, Paid, Freemium..."
             .form-actions.u-marginTop30
               = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'
