@@ -47,8 +47,9 @@ class AgreementController < ApplicationController
                                       :how_to_validate_market, :main_competitive_advantage,
                                       :validations_for_the_launch, :aditional_rules,
                                       :validation_of_the_agreement,
-                                      roles_attributes: [:id, :full_name, :email,
+                                      roles_attributes: [:id, :step, :full_name, :email,
                                                          :full_address, :id_number, :role,
+                                                         :intellectual_property_percent,
                                                          :_destroy])
   end
 end

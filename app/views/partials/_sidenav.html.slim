@@ -21,11 +21,10 @@ nav
           span.stepNumber 4
           span.stepTxt Market
       li
-        = link_to wizard_path(:aditional), class: ('active' if request.path == wizard_path(:aditional)) do
+        = link_to wizard_path(:legal), class: ('active' if request.path == wizard_path(:legal)) do
           span.stepNumber 5
           span.stepTxt Legal
       li
         = link_to wizard_path(:preview), class: ('active' if request.path == wizard_path(:preview)) do
           span.stepNumber 6
           span.stepTxt Preview
-

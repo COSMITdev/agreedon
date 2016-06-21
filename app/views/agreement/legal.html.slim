@@ -16,6 +16,22 @@
               .form-group
                 = f.input :validation_of_the_agreement, collection: [["30 Days", "30"], ["60 Days", "60"], ["90 Days", "90"]],
                                                         include_blank: 'How long is this agreement in effect for?'
+
+            hr
+
+            h3 Intellectual Property Rights
+
+            = f.simple_fields_for :roles, @agreement.roles do |c|
+              = c.hidden_field :step, value: step.to_s
+              .form-inputs
+                .row
+                  .col-sm-6
+                    .form-group
+                      = c.input :full_name, disabled: true, label: "Member"
+                  .col-sm-6
+                    .form-group
+                      = c.input :intellectual_property_percent, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.zero? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
+
             .form-actions.u-marginTop30
               = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'
