@@ -7,7 +7,7 @@ class Agreement < ActiveRecord::Base
 
   validates :title, :description, :domain, presence: true, if: :on_intro_step?
   validates :validation_of_the_agreement, presence: true, if: :on_legal_step?
-  validate :at_least_one_step, if: :on_team_step?
+  validate :has_at_least_one_role, if: :on_team_step?
 
   protected
 
@@ -31,7 +31,7 @@ class Agreement < ActiveRecord::Base
     self.step == 'legal'
   end
 
-  def at_least_one_step
+  def has_at_least_one_role
     errors.add(:base, 'You must provide at least one role!') if self.roles.blank?
   end
 end

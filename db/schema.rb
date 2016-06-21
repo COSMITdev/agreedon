@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621201207) do
+ActiveRecord::Schema.define(version: 20160621234905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,14 +75,23 @@ ActiveRecord::Schema.define(version: 20160621201207) do
 
   create_table "roles", force: :cascade do |t|
     t.integer  "agreement_id"
-    t.string   "role",                          default: "",  null: false
-    t.string   "email",                         default: "",  null: false
+    t.string   "email",                         default: "",    null: false
     t.string   "id_number"
-    t.string   "full_name",                     default: "",  null: false
-    t.string   "full_address",                  default: "",  null: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.float    "intellectual_property_percent", default: 0.0, null: false
+    t.string   "full_name",                     default: "",    null: false
+    t.string   "full_address",                  default: "",    null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.float    "intellectual_property_percent", default: 0.0,   null: false
+    t.boolean  "ux",                            default: false
+    t.boolean  "design",                        default: false
+    t.boolean  "devops",                        default: false
+    t.boolean  "marketing",                     default: false
+    t.string   "custom_role",                   default: "f"
+    t.boolean  "copywriting",                   default: false
+    t.boolean  "quality_assurance",             default: false
+    t.boolean  "product_management",            default: false
+    t.boolean  "back_end_development",          default: false
+    t.boolean  "front_end_development",         default: false
   end
 
   add_index "roles", ["agreement_id"], name: "index_roles_on_agreement_id", using: :btree

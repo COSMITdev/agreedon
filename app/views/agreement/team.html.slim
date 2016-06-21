@@ -14,6 +14,8 @@
             / This field is to check the current step of the form
             = f.hidden_field :step, value: step.to_s
             = f.simple_fields_for :roles, @agreement.roles do |c|
+              / This field is used to inform the Model which step is the current
+              = c.hidden_field :step, value: step.to_s
               .form-inputs
                 .row
                   .col-sm-6
@@ -24,10 +26,33 @@
                       = c.input :email
                 .form-group
                   = c.input :full_address
+                
+                h3 Roles
                 .form-group
-                  = c.input :role
+                  = c.input :ux, label: 'UX'
+                .form-group
+                  = c.input :design, label: 'Design'
+                .form-group
+                  = c.input :devops, label: 'DevOps'
+                .form-group
+                  = c.input :marketing, label: 'Marketing'
+                .form-group
+                  = c.input :copywriting, label: 'Copywriting'
+                .form-group
+                  = c.input :quality_assurance, label: 'Quality Assurance'
+                .form-group
+                  = c.input :product_management, label: 'Product Management'
+                .form-group
+                  = c.input :back_end_development, label: 'Back End Development'
+                .form-group
+                  = c.input :front_end_development, label: 'Front End Development'
+                .form-group
+                  = c.input :custom_role, label: 'Custom Role'
+
                 = c.input :_destroy, as: :boolean, label: 'Remove?'
+
                 hr
+
             = f.link_to_add 'Add a team member', :roles, class: 'btn -sm -primary'
             
             .form-actions.u-marginTop30

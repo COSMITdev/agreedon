@@ -50,6 +50,12 @@ class AgreementController < ApplicationController
                                       roles_attributes: [:id, :step, :full_name, :email,
                                                          :full_address, :id_number, :role,
                                                          :intellectual_property_percent,
+                                                         :ux, :design, :devops,
+                                                         :marketing, :custom_role,
+                                                         :copywriting, :quality_assurance,
+                                                         :product_management,
+                                                         :back_end_development,
+                                                         :front_end_development,
                                                          :_destroy])
   end
 end
