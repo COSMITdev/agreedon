@@ -1,7 +1,7 @@
 class AgreementController < ApplicationController
   include Wicked::Wizard
 
-  steps :intro, :team, :product, :market, :aditional, :preview
+  steps :intro, :team, :product, :market, :legal, :preview
 
   def show
     # search for a session hash

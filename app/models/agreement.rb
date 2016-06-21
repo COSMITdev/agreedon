@@ -6,6 +6,7 @@ class Agreement < ActiveRecord::Base
   accepts_nested_attributes_for :roles, allow_destroy: true
 
   validates :title, :description, :domain, presence: true, if: :on_intro_step?
+  validates :validation_of_the_agreement, presence: true, if: :on_legal_step?
   validate :at_least_one_step, if: :on_team_step?
 
   protected
