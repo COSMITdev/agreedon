@@ -7,9 +7,12 @@ section.footer
             = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'footerBrand'
           .col-sm-6
             .u-floatRgt
-              = link_to 'About', about_path, title: 'About us', class: 'footerLink'
+              = link_to 'Terms of Use', terms_of_use_path, title: 'About us', class: 'footerLink'
+              = link_to 'About', about_path, title: 'About us', class: 'footerLink u-marginRgt15'
               span.u-textGray-light
                 | Made with 
                 i.fa.fa-heart-o
                 |  by 
                 = link_to 'COSMIT', 'http://cosmit.me', title: 'Visit us!', class: 'u-linkInverse'
+                |  & 
+                = link_to 'Pedram', 'http://www.pedramdaraeizadeh.com/', title: 'Know more about me', class: 'u-linkInverse'
