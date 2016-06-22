@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20160621234905) do
     t.boolean  "design",                        default: false
     t.boolean  "devops",                        default: false
     t.boolean  "marketing",                     default: false
-    t.string   "custom_role",                   default: "f"
+    t.string   "custom_role",                   default: ""
     t.boolean  "copywriting",                   default: false
     t.boolean  "quality_assurance",             default: false
     t.boolean  "product_management",            default: false
