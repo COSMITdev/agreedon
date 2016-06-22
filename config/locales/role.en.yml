@@ -7,8 +7,19 @@ en:
 
     attributes:
       role:
+        ux: 'Ux'
         role: 'Accepting Roles'
         email: 'Email Address'
+        design: 'Design'
+        devops: 'Devops'
         id_number: 'ID Number'
         full_name: 'First and Last Names'
+        marketing: 'Marketing'
+        custom_role: 'Custom Role'
+        copywriting: 'Copywriting'
         full_address: 'Mailing Address'
+        quality_assurance: 'Quality Assurance'
+        product_management: 'Product Management'
+        back_end_development: 'Back End Development'
+        front_end_development: 'Front End Development'
+        intellectual_property_percent: 'Intellectual Property Percent'

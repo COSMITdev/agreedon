@@ -32,6 +32,11 @@ class AgreementController < ApplicationController
     render_wizard(@agreement)
   end
 
+  def export
+    @agreement = Agreement.find_by(token: params[:agreement_id])
+    render pdf: "agreement", template: 'agreement/export.pdf.erb', show_as_html: params[:debug].present?
+  end
+
   private
 
   def finish_wizard_path

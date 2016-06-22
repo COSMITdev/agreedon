@@ -23,6 +23,8 @@ gem "font-awesome-rails"
 gem "meta-tags"
 gem "wicked"
 gem "nested_form"
+gem 'wkhtmltopdf-binary'
+gem "wicked_pdf"
 
 group :development do
   gem "quiet_assets"
