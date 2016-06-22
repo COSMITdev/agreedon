@@ -20,14 +20,14 @@
                 .row
                   .col-sm-6
                     .form-group
-                      = c.input :full_name, autofocus: true
+                      = c.input :full_name, autofocus: true, label: 'Full Name', placeholder: 'First name, Family name'
                   .col-sm-6
                     .form-group
-                      = c.input :email
+                      = c.input :email, placeholder: 'example@email.com'
                 .form-group
                   = c.input :full_address
                 
-                h3 Roles
+                label Roles
                 .form-group
                   = c.input :ux, label: 'UX'
                 .form-group

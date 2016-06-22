@@ -27,15 +27,6 @@ button[data-toggle="dropdown"] {
   }
 }
 
-::placeholder {
-  color: #d8d8d8 !important;
-  font-weight: 400;
-}
-
-label {
-  color: $gray-dark;
-}
-
 // # Textarea
 // # =================================================================
 textarea {
@@ -52,6 +43,19 @@ textarea {
   }
 }
 
+// # Select
+// # =================================================================
+.select::before {
+  content: '▾';
+  position: absolute;
+  margin-top: 12px;
+  right: 30px;
+  z-index: 10000;
+  color: $gray-dark;
+}
+
+// # Errors
+// # =================================================================
 .has-error {
   input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]),
   select,
@@ -63,4 +67,22 @@ textarea {
   .help-block {
     font-size: 80%;
   }
+}
+
+// # Misc
+// # =================================================================
+.input-group-addon {
+  border: 2px solid $gray !important;
+  background-color: $gray;
+  font-weight: 700;
+  color: $gray-dark;
+}
+
+label {
+  color: $gray-dark;
+}
+
+::placeholder {
+  color: #d8d8d8 !important;
+  font-weight: 400;
 }

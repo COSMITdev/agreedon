@@ -16,6 +16,6 @@
               .form-group
                 = f.input :domain, placeholder: "What is the purchased or proposed domain of the product?"
               .form-group
-                = f.input :description, as: :string, placeholder: "How do you describe the product in 140 characters or less?"
+                = f.input :description, as: :text, placeholder: "How do you describe the product in 140 characters or less?", input_html: {maxlength: 140, size: 140}
             .form-actions.u-marginTop30
               = f.submit "Next Step", title:'Next Step', class: 'btn -md -primary u-floatRgt'
