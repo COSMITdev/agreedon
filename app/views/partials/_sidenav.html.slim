@@ -1,13 +1,13 @@
 nav
   .navInfo
-    h2.u-noMargin.u-marginTop20.u-marginBot5 Some info
-    p Lorem ipsum dolor sit amet consectetuer adipiscing.
+    h2.u-noMargin.u-marginTop20.u-marginBot5 Enter details
+    p Fill up the information to the best of your knowledge.
   .navSteps.u-marginTop30
     ul
       li
         = link_to wizard_path(:intro), class: ('active' if request.path == wizard_path(:intro)) do
           span.stepNumber 1
-          span.stepTxt Product Intro
+          span.stepTxt Intro
       li
         = link_to wizard_path(:team), class: ('active' if request.path == wizard_path(:team)) do
           span.stepNumber 2
@@ -15,7 +15,7 @@ nav
       li
         = link_to wizard_path(:product), class: ('active' if request.path == wizard_path(:product)) do
           span.stepNumber 3
-          span.stepTxt Product Details
+          span.stepTxt Product
       li
         = link_to wizard_path(:market), class: ('active' if request.path == wizard_path(:market)) do
           span.stepNumber 4
@@ -27,4 +27,4 @@ nav
       li
         = link_to wizard_path(:preview), class: ('active' if request.path == wizard_path(:preview)) do
           span.stepNumber 6
-          span.stepTxt Preview
+          span.stepTxt Agree

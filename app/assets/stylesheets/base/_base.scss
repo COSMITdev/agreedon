@@ -16,6 +16,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
+    color: darken($blue, 30%);
   }
 }
 

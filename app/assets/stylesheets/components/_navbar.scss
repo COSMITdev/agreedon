@@ -32,16 +32,20 @@
   .navbar-nav {
     margin: 0;
 
-    & > li > a {
-      color: $gray-dark;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      padding: 32px 15px 32px;
+    & > li {
+      display: inline-block;
 
-      &:hover,
-      &:focus {
-        color: $blue;
-        transition: all .2s;
+      & > a {
+        color: $gray-dark;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 32px 15px 32px;
+
+        &:hover,
+        &:focus {
+          color: $blue;
+          transition: all .2s;
+        }
       }
     }
   }
@@ -82,6 +86,23 @@
 
     .navbar-brand {
       padding-left: 30px;
+    }
+  }
+
+  .navbar .container-fluid {
+    padding-right: 0px;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 345px) {
+  .container {
+    .navbar-nav > li > a {
+      margin-right: -20px;
+    }
+
+    .navbar-brand {
+      padding-left: 20px;
     }
   }
 

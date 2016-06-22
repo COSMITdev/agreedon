@@ -1,7 +1,12 @@
 .nav.navbar.navbar-default.u-noPrint class="#{'-internal' if params[:controller] != 'pages'}"
   div class="container#{'-fluid' if params[:controller] != 'pages'}"
     .navbar-header
-      = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'navbar-brand'
+      - if params[:controller] == 'pages'
+        = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'navbar-brand'
+      - else
+        = link_to 'Agreedon', wizard_path(:intro), title: 'Agreedon', class: 'navbar-brand'
       ul.nav.navbar-nav.navbar-right.u-floatRgt
+        li
+          = link_to 'Terms of Use', terms_of_use_path, title: 'Terms of Use'
         li
           = link_to 'About', about_path, title: 'About us'
