@@ -53,10 +53,12 @@
       <td width="30%"><b>Email Address</b></td>
       <td><%= member.email %></td>
     </tr>
-    <tr>
-      <td width="30%"><b>Mailing Address</b></td>
-      <td><%= member.full_address %></td>
-    </tr>
+    <% if member.full_address.present? %>
+      <tr>
+        <td width="30%"><b>Mailing Address</b></td>
+        <td><%= member.full_address %></td>
+      </tr>
+    <% end %>
     <tr>
       <td><b>Accepting Role(s)</b></td>
       <td><%= t('activerecord.attributes.role.ux')+',' if member.ux.present? %>
@@ -116,14 +118,11 @@
 
 <h2 class="u-marginBot40">Agreement</h2>
 <br>
-<div style="margin-left: -15px; margin-right: -15px;">
-  <% @agreement.roles.each do |member|%>
-    <div style="width: 50%; float: left; padding-left: 15px; padding-right: 15px;">
-      <hr>
-      <b><%= member.full_name %></b>
-      <br>
-      <p class="text-justify" style="margin-bottom:50px">Date:</p>
-    </div>
-  <% end %>
-</div>
+<% @agreement.roles.each do |member|%>
+  <hr>
+  <b><%= member.full_name %></b>
+  <br>
+  <p class="text-justify" style="margin-bottom:50px">Date:</p>
+<% end %>
+
 <div class="clearfix"></div>

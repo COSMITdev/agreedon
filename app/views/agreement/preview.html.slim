@@ -15,4 +15,4 @@
             = render partial: 'document'
           .form-actions.u-marginTop30.u-noPrint
             = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
-            = link_to 'Send by Email', agreement_export_path(@agreement.token, format: 'pdf'), title:'Export PDF', class: 'btn -md -primary u-floatRgt u-marginLft20'
+            = link_to 'Send by Email', agreement_export_path(@agreement.token, format: 'pdf'), title:'Send by Email', class: 'btn -md -primary u-floatRgt u-marginLft20'
