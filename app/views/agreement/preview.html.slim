@@ -13,6 +13,14 @@
         .col-sm-12
           .previewBox
             = render partial: 'document'
+          
+          .label.label-success
+            = check_box_tag :terms
+            = label_tag :terms, "Agree to ToU"
+          br
+          .label.label-warning
+            small by using this service you agree with our Terms of Use as specified at this URL: <a href='www.getagreedon.com/terms-of-use'>www.getagreedon.com/terms-of-use</a>)
+          
           .form-actions.u-marginTop30.u-noPrint
             = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
-            = link_to 'Send by Email', agreement_export_path(@agreement.token, format: 'pdf'), title:'Send by Email', class: 'btn -md -primary u-floatRgt u-marginLft20'
+            = link_to 'Send by Email', agreement_export_path(@agreement.token, format: 'pdf'), title:'Send by Email', class: 'btn -md -primary u-floatRgt u-marginLft20', id: 'printButton', disabled: true
