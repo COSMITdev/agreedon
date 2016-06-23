@@ -6,20 +6,22 @@
     / main content
     .col-sm-8.col-md-9.col-sm-offset-4.col-md-offset-3.mainContent
       .row
-        .col-sm-10.col-md-8
-          h2.u-noMargin.u-marginTop20.u-marginBot5.u-noPrint title="Agreement Preview" Agreement Preview
-          p.u-marginBot30 Take a careful look at your agreement before print and sign it. You will be emailed with a PDF version of this document.
+        .col-sm-10.col-md-9
+          h2.u-noMargin.u-marginTop20.u-marginBot10.u-noPrint title="Agreement Preview" Agreement Preview
+          p.u-marginBot30 Take a careful look at this preview before print and sign it. You and your team members will be emailed with a PDF version of this document.
       .row
         .col-sm-12
           .previewBox
             = render 'document.html.erb', locals: { agreement: @agreement }
-          
-          .label.label-success
-            = check_box_tag :terms
-            = label_tag :terms, "Agree to ToU"
           br
-          .label.label-warning
-            small by using this service you agree with our Terms of Use as specified at this URL: <a href='www.getagreedon.com/terms-of-use'>www.getagreedon.com/terms-of-use</a>)
+          = check_box_tag :terms
+          label.u-textBlack.u-marginLft10
+            | Agree to our 
+            = link_to 'Terms of Use', terms_of_use_path
+          br
+          p.small
+            | By using this service you agree with our Terms of Use as specified at this URL: 
+            = link_to 'www.getagreedon.com/terms-of-use', terms_of_use_path
           
           .form-actions.u-marginTop30.u-noPrint
             = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'
