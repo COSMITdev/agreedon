@@ -11,7 +11,11 @@ section.pageHero
           .row
             .col-sm-8.col-md-6.u-centered
               h3.u-textLight.u-marginTop10 Create and sign a simple but fair agreement with your team before making a new software product
-          = link_to 'Get started now', agreement_index_path, title: 'Get started now', class: 'btn -lg -primary u-marginTop40'
+          - if session[:agreement].present?
+            = link_to 'Continue', agreement_index_path, title: 'Continue Filling Your Agreement', class: 'btn -lg -primary u-marginTop40'
+            = link_to 'Start Another', new_agreement_path, title: 'Start a new Agreement', class: 'btn -lg -primary u-marginTop40'
+          - else
+            = link_to 'Get started now', agreement_index_path, title: 'Get started now', class: 'btn -lg -primary u-marginTop40'
           .heroHint.u-marginTop10 No sign up required!
 
 section.about

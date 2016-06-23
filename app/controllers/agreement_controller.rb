@@ -9,12 +9,24 @@ class AgreementController < ApplicationController
     # set the token variable with this session
     token = session[:agreement]
     if Agreement.find_by(token: token)
-     @agreement = Agreement.find_by(token: token)
+      @agreement = Agreement.find_by(token: token)
     else
-     @agreement = Agreement.new(token: token)
+      @agreement = Agreement.new(token: token)
     end
 
     render_wizard
+  end
+
+  def new
+    token = session[:agreement] = SecureRandom.hex
+    # set the token variable with this session
+    if Agreement.find_by(token: token)
+      @agreement = Agreement.find_by(token: token)
+    else
+      @agreement = Agreement.new(token: token)
+    end
+
+    redirect_to wizard_path(:intro)
   end
 
   def update
@@ -29,6 +41,7 @@ class AgreementController < ApplicationController
     else
       @agreement = Agreement.new(agreement_params.merge(token: token))
     end
+
     render_wizard(@agreement)
   end
 
