@@ -9,8 +9,11 @@
       .row
         .col-sm-12.col-md-10
           = simple_nested_form_for @agreement, url: wizard_path, method: :put do |f|
-            - if f.object.errors.any?
-              span.label.label-danger = f.object.errors.messages[:base]
+            / show this error when no one Member is added  
+            - if f.object.errors.any? && f.object.errors[:base].present?
+              span.label.label-danger = f.object.errors.messages[:base].first
+              br
+              br
             / This field is to check the current step of the form
             = f.hidden_field :step, value: step.to_s
             = f.simple_fields_for :roles, @agreement.roles do |c|
@@ -20,14 +23,18 @@
                 .row
                   .col-sm-6
                     .form-group
-                      = c.input :full_name, autofocus: true
+                      = c.input :full_name, autofocus: true, label: 'Full Name', placeholder: 'First name, Family name'
                   .col-sm-6
                     .form-group
-                      = c.input :email
+                      = c.input :email, placeholder: 'example@email.com'
                 .form-group
                   = c.input :full_address
                 
-                h3 Roles
+                label Roles
+                - if c.object.errors.any?
+                  .has-error
+                    = c.error :base, class: ''
+                
                 .form-group
                   = c.input :ux, label: 'UX'
                 .form-group
@@ -49,7 +56,7 @@
                 .form-group
                   = c.input :custom_role, label: 'Custom Role'
 
-                = c.input :_destroy, as: :boolean, label: 'Remove?'
+                = c.link_to_remove 'Remove Member', class: 'btn -sm -danger', data: { confirm: 'Are you Sure?' }
 
                 hr
 

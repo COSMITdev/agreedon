@@ -12,25 +12,30 @@
             = f.hidden_field :step, value: step.to_s
             .form-inputs
               .form-group
-                = f.input :aditional_rules, as: :text
-              .form-group
-                = f.input :validation_of_the_agreement, collection: [["30 Days", "30"], ["60 Days", "60"], ["90 Days", "90"]],
-                                                        include_blank: 'How long is this agreement in effect for?'
+                = f.input :aditional_rules, as: :text, placeholder: 'Any additional rules or agreement between team members or other legal concerns?'
+              .row
+                .col-sm-6
+                  .form-group
+                    label Validation Period
+                    = f.input :validation_of_the_agreement, label:false, collection: [["30 Days", "30"], ["60 Days", "60"], ["90 Days", "90"]],
+                                                            include_blank: 'How long is this agreement in effect for?'
 
-            hr
+            hr.u-marginTop30.u-marginBot30
 
-            h3 Intellectual Property Rights
+            label Intellectual Property Rights
+            p.small You can assign different percentages for each member.
 
             = f.simple_fields_for :roles, @agreement.roles do |c|
               = c.hidden_field :step, value: step.to_s
               .form-inputs
                 .row
-                  .col-sm-6
+                  .col-sm-5.col-md-4
+                    h4.u-marginTop15 = c.object.full_name
+                  .col-sm-4.col-md-3
                     .form-group
-                      = c.input :full_name, disabled: true, label: "Member"
-                  .col-sm-6
-                    .form-group
-                      = c.input :intellectual_property_percent, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.blank? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
+                      .input-group
+                        = c.input :intellectual_property_percent, label: false, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.zero? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
+                        span.input-group-addon %
 
             .form-actions.u-marginTop30
               = link_to 'Back', previous_wizard_path, title:'Back', class: 'btn -md -secondary u-floatLft'

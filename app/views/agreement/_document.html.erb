@@ -1,0 +1,128 @@
+<div class="text-center">
+  <h1>Early Product Agreement</h1>
+  <p class="text-center">A simple, but fair, agreement before making a new product.</p>
+</div>
+
+<br>
+
+<table class="table">
+  <tr>
+    <td width="50%" class="text-left">
+      <b>Issue Date:</b> <span><%= Date.today.strftime("%B %d, %Y") %></span>
+    </td>
+
+    <td width="50%" class="text-right">
+      <b>Expire Date:</b> <span><%= (Date.today + @agreement.validation_of_the_agreement.to_i.days).strftime("%B %d, %Y") %></span>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<p class="text-justify">The goal of this agreement is to clarify the roles and responsibilities for all team members while protecting the rights of everyone who collaborate on making a new software product. </p>
+
+<p class="text-justify">This agreement was created by using a free to use online service (<a href="http://www.getagreedon.com">www.getagreedon.com</a>) and has not been certified by any legal professional. Therefore, it should only be used as a starting point for potential co-founders and in lieu of any other official and legal agreement. </p>
+
+<p class="text-justify">By signing this agreement all team members certify that they have read and agree with the Terms of Use of the AgreeOn service provided on this URL: <a href="http://www.getagreedon.com/terms-of-use">www.getagreedon.com/terms-of-use</a></p>
+
+<p class="text-justify">All team members who sign this agreement certify that the information they have provided are accurate and complete at the time of signing.</p>
+
+<br>
+
+<h2>Intro</h2>
+
+<p class="text-justify">
+  <b>Product Name:</b> <span><%= @agreement.title %></span>
+</p>
+
+<p class="text-justify">
+  <b>Product Description:</b> <span><%= @agreement.description %></span>
+</p>
+
+<br>
+
+<h2>Team</h2>
+
+<% @agreement.roles.each do |member|%>
+  <table class="table table-bordered">
+    <tr>
+      <td width="30%"><b>Full Name</b></td>
+      <td><%= member.full_name %></td>
+    </tr>
+    <tr>
+      <td width="30%"><b>Email Address</b></td>
+      <td><%= member.email %></td>
+    </tr>
+    <% if member.full_address.present? %>
+      <tr>
+        <td width="30%"><b>Mailing Address</b></td>
+        <td><%= member.full_address %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><b>Accepting Role(s)</b></td>
+      <td><%= t('activerecord.attributes.role.ux')+',' if member.ux.present? %>
+          <%= t('activerecord.attributes.role.design')+',' if member.design.present? %>
+          <%= t('activerecord.attributes.role.devops')+',' if member.devops.present? %>
+          <%= t('activerecord.attributes.role.marketing')+',' if member.marketing.present? %>
+          <%= t('activerecord.attributes.role.custom_role')+',' if member.custom_role.present? %>
+          <%= t('activerecord.attributes.role.copywriting')+',' if member.copywriting.present? %>
+          <%= t('activerecord.attributes.role.quality_assurance')+',' if member.quality_assurance.present? %>
+          <%= t('activerecord.attributes.role.product_management')+',' if member.product_management.present? %>
+          <%= t('activerecord.attributes.role.back_end_development')+',' if member.back_end_development.present? %>
+          <%= t('activerecord.attributes.role.front_end_development')+'"'if member.front_end_development.present? %></td>
+    </tr>
+  </table>
+<% end %>
+
+<br>
+
+<h2>Product</h2>
+
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.customers')+': ' %></b><span><%= @agreement.customers.present? ? @agreement.customers : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.actual_problem')+': ' %></b><span><%= @agreement.actual_problem.present? ? @agreement.actual_problem : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.actual_solution')+': ' %></b><span><%= @agreement.actual_solution.present? ? @agreement.actual_solution : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.proposed_solution')+': ' %></b><span><%= @agreement.proposed_solution.present? ? @agreement.proposed_solution : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.value_proposition')+': ' %></b><span><%= @agreement.value_proposition.present? ? @agreement.value_proposition : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.platforms')+': ' %></b><span><%= @agreement.platforms.present? ? @agreement.platforms : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.princing_model')+': ' %></b><span><%= @agreement.princing_model.present? ? @agreement.princing_model : 'n/a' %></span></p>
+
+<br>
+
+<h2>Market</h2>
+
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.market_size')+': ' %></b><span><%= @agreement.market_size.present? ? @agreement.market_size : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.mainly_competitors')+': ' %></b><span><%= @agreement.mainly_competitors.present? ? @agreement.mainly_competitors : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.indirect_competitors')+': ' %></b><span><%= @agreement.indirect_competitors.present? ? @agreement.indirect_competitors : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.how_to_validate_market')+': ' %></b><span><%= @agreement.how_to_validate_market.present? ? @agreement.how_to_validate_market : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.main_competitive_advantage')+': ' %></b><span><%= @agreement.main_competitive_advantage.present? ? @agreement.main_competitive_advantage : 'n/a' %></span></p>
+
+<br>
+
+<h2>Legal</h2>
+
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.aditional_rules')+': ' %></b><span><%= @agreement.aditional_rules.present? ? @agreement.aditional_rules : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.validation_of_the_agreement')+': ' %></b><span><%= @agreement.validation_of_the_agreement + " Days" %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.role.intellectual_property_percent') %></span></b></p>
+
+<table class="table table-bordered">
+  <% @agreement.roles.each do |member|%>
+    <tr>
+      <td width="50%"><%= member.full_name %></td>
+      <td width="50%" class="text-right"><%= number_to_percentage member.intellectual_property_percent, precision: 2 %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<h2 class="u-marginBot40">Agreement</h2>
+<br>
+<% @agreement.roles.each do |member|%>
+  <hr>
+  <b><%= member.full_name %></b>
+  <br>
+  <p class="text-justify" style="margin-bottom:50px">Date:</p>
+<% end %>
+
+<div class="clearfix"></div>

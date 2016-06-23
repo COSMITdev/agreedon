@@ -32,6 +32,15 @@ class AgreementController < ApplicationController
     render_wizard(@agreement)
   end
 
+  def export
+    @agreement = Agreement.find_by(token: params[:agreement_id])
+    if AgreementMailer.send_agreement(@agreement).deliver_now
+      redirect_to root_path, notice: 'Your Agreement has been sent!'
+    else
+      redirect_to :back, alert: 'There was an error sending the email!'
+    end
+  end
+
   private
 
   def finish_wizard_path
