@@ -10,6 +10,6 @@ class AgreementMailer < ApplicationMailer
 
     attachments["agreement.pdf"] = pdf
     emails = @members.pluck(:email).join(',')
-    mail to: emails, subject: 'Agreement From GetAgreeOn!'
+    mail to: emails, subject: 'Your Early Product Agreement'
   end
 end
