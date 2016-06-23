@@ -74,7 +74,15 @@ section.about {
 // # =================================================================
 @media (max-width: 769px) {
   .heroContainer {
-    height: 60vh !important;
+    height: 70vh !important;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .btn {
+      margin-top: 10px !important;
+    }
   }
 
   .pageHero .pageHeroRgt img {

@@ -95,19 +95,29 @@
   }
 }
 
-@media (max-width: 345px) {
+@media (max-width: 360px) {
   .container {
     .navbar-nav > li > a {
-      margin-right: -20px;
+      margin-right: -25px;
     }
 
     .navbar-brand {
-      padding-left: 20px;
+      padding-left: 15px;
     }
   }
 
   .navbar .container-fluid {
     padding-right: 0px;
-    padding-left: 25px;
+    padding-left: 15px;
+  }
+
+  .navbar.-internal {
+    .navbar-nav {
+      margin-right: -10px;
+    }
+
+    .navbar-nav > li > a {
+      padding: 20px 10px 20px;
+    }
   }
 }

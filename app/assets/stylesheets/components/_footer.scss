@@ -32,6 +32,7 @@ section.footer {
 @media (max-width: 768px) {
   section.footer {
     text-align: center;
+    padding-bottom: 15px;
 
     .footerBrand {
       padding-bottom: 5px;
@@ -39,6 +40,7 @@ section.footer {
 
     .footerLink {
       padding-top: 10px;
+      padding-bottom: 15px;
     }
 
     .u-floatRgt {
