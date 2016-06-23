@@ -23,7 +23,7 @@ class Role < ActiveRecord::Base
        self.quality_assurance.blank? && self.product_management.blank? &&
        self.back_end_development.blank? && self.front_end_development.blank?
 
-       errors.add(:front_end_development, 'You need to choose at least one role!')
+       errors.add(:base, 'You need to choose at least one role!')
     end
   end
 end
