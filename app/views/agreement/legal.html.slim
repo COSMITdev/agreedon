@@ -34,7 +34,7 @@
                   .col-sm-4.col-md-3
                     .form-group
                       .input-group
-                        = c.input :intellectual_property_percent, label: false, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.blank? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
+                        = c.input :intellectual_property_percent, label: false, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.zero? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
                         span.input-group-addon %
 
             .form-actions.u-marginTop30
