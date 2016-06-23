@@ -94,8 +94,8 @@
 <p class="text-justify"><b><%= t('activerecord.attributes.agreement.market_size')+': ' %></b><span><%= @agreement.market_size.present? ? @agreement.market_size : 'n/a' %></span></p>
 <p class="text-justify"><b><%= t('activerecord.attributes.agreement.mainly_competitors')+': ' %></b><span><%= @agreement.mainly_competitors.present? ? @agreement.mainly_competitors : 'n/a' %></span></p>
 <p class="text-justify"><b><%= t('activerecord.attributes.agreement.indirect_competitors')+': ' %></b><span><%= @agreement.indirect_competitors.present? ? @agreement.indirect_competitors : 'n/a' %></span></p>
-<p class="text-justify"><b><%= t('activerecord.attributes.agreement.how_to_validate_market')+': ' %></b><span><%= @agreement.how_to_validate_market.present? ? @agreement.how_to_validate_market : 'n/a' %></span></p>
 <p class="text-justify"><b><%= t('activerecord.attributes.agreement.main_competitive_advantage')+': ' %></b><span><%= @agreement.main_competitive_advantage.present? ? @agreement.main_competitive_advantage : 'n/a' %></span></p>
+<p class="text-justify"><b><%= t('activerecord.attributes.agreement.validations_for_the_launch')+': ' %></b><span><%= @agreement.validations_for_the_launch.present? ? @agreement.validations_for_the_launch : 'n/a' %></span></p>
 
 <br>
 
@@ -119,10 +119,13 @@
 <h2 class="u-marginBot40">Agreement</h2>
 <br>
 <% @agreement.roles.each do |member|%>
-  <hr>
-  <b><%= member.full_name %></b>
-  <br>
-  <p class="text-justify" style="margin-bottom:50px">Date:</p>
+  <p class="text-justify"  style="margin-bottom:50px">
+    Signature:
+    <br>
+    <b><%= member.full_name %></b>
+    <br>
+    Date:
+  </p>
 <% end %>
 
 <div class="clearfix"></div>

@@ -22,7 +22,7 @@
 
             hr.u-marginTop30.u-marginBot30
 
-            label Intellectual Property Rights
+            label * Intellectual Property Rights
             p.small You can assign different percentages for each member.
 
             = f.simple_fields_for :roles, @agreement.roles do |c|
@@ -34,7 +34,7 @@
                   .col-sm-4.col-md-3
                     .form-group
                       .input-group
-                        = c.input :intellectual_property_percent, label: false, input_html: { min: 0, max: 100, value: (c.object.intellectual_property_percent.zero? ? (100.0 / @agreement.roles.count) : c.object.intellectual_property_percent) }
+                        = c.input :intellectual_property_percent, label: false, input_html: { min: 0, max: 100 }, required: true
                         span.input-group-addon %
 
             .form-actions.u-marginTop30

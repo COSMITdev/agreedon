@@ -2,9 +2,9 @@
   div class="container#{'-fluid' if params[:controller] != 'pages'}"
     .navbar-header
       - if params[:controller] == 'pages'
-        = link_to 'Agreedon', root_path, title: 'Agreedon', class: 'navbar-brand'
+        = link_to 'AgreedOn', root_path, title: 'Agreedon', class: 'navbar-brand'
       - else
-        = link_to 'Agreedon', wizard_path(:intro), title: 'Agreedon', class: 'navbar-brand'
+        = link_to 'AgreedOn', wizard_path(:intro), title: 'Agreedon', class: 'navbar-brand'
       ul.nav.navbar-nav.navbar-right.u-floatRgt
         li
           = link_to 'Terms of Use', terms_of_use_path, title: 'Terms of Use'

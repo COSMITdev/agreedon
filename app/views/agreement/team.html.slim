@@ -30,7 +30,7 @@
                 .form-group
                   = c.input :full_address
                 
-                label Roles
+                label * Roles
                 - if c.object.errors.any?
                   .has-error
                     = c.error :base, class: ''
@@ -54,7 +54,7 @@
                 .form-group
                   = c.input :front_end_development, label: 'Front End Development'
                 .form-group
-                  = c.input :custom_role, label: 'Custom Role'
+                  = c.input :custom_role, label: 'Custom Role', placeholder: 'Hustler, Dishwasher, Office pte, etc'
 
                 = c.link_to_remove 'Remove Member', class: 'btn -sm -danger', data: { confirm: 'Are you Sure?' }
 
