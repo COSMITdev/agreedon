@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623064725) do
+ActiveRecord::Schema.define(version: 20160623185323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160623064725) do
     t.text     "proposed_solution",           default: ""
     t.text     "value_proposition",           default: ""
     t.text     "how_customers_spend_time",    default: ""
-    t.text     "product_offered_solutions",   default: ""
+    t.text     "customers_location",          default: ""
     t.string   "market_size",                 default: ""
     t.text     "mainly_competitors",          default: ""
     t.text     "indirect_competitors",        default: ""
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160623064725) do
     t.text     "validations_for_the_launch",  default: ""
     t.string   "aditional_rules",             default: ""
     t.string   "validation_of_the_agreement", default: ""
+    t.text     "aditional_info",              default: ""
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
