@@ -109,7 +109,7 @@
   <% @agreement.roles.each do |member|%>
     <tr>
       <td width="50%"><%= member.full_name %></td>
-      <td width="50%" class="text-right"><%= number_to_percentage member.intellectual_property_percent %></td>
+      <td width="50%" class="text-right"><%= number_to_percentage member.intellectual_property_percent, precision: 2 %></td>
     </tr>
   <% end %>
 </table>

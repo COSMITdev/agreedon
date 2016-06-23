@@ -34,7 +34,11 @@ class AgreementController < ApplicationController
 
   def export
     @agreement = Agreement.find_by(token: params[:agreement_id])
-    render pdf: "agreement", template: 'agreement/export.pdf.erb', show_as_html: params[:debug].present?
+    if AgreementMailer.send_agreement(@agreement).deliver_now
+      redirect_to root_path, notice: 'Your Agreement has been sent!'
+    else
+      redirect_to :back, alert: 'There was an error sending the email!'
+    end
   end
 
   private
