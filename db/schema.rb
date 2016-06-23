@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160623185323) do
     t.text     "validations_for_the_launch",  default: ""
     t.string   "aditional_rules",             default: ""
     t.string   "validation_of_the_agreement", default: ""
+    t.text     "customer_location"
     t.text     "aditional_info",              default: ""
   end
 
