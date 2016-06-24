@@ -2,7 +2,6 @@
 // # =================================================================
 section.footer {
   border-top: 1px solid $gray;
-  height: 88px;
   color: $gray-dark;
   font-size: 0.8125rem;
 
@@ -32,7 +31,7 @@ section.footer {
 @media (max-width: 768px) {
   section.footer {
     text-align: center;
-    padding-bottom: 15px;
+    margin-bottom: 30px;
 
     .footerBrand {
       padding-bottom: 5px;
