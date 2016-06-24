@@ -67,12 +67,12 @@
           <%= t('activerecord.attributes.role.design')+',' if member.design.present? %>
           <%= t('activerecord.attributes.role.devops')+',' if member.devops.present? %>
           <%= t('activerecord.attributes.role.marketing')+',' if member.marketing.present? %>
-          <%= t('activerecord.attributes.role.custom_role')+',' if member.custom_role.present? %>
           <%= t('activerecord.attributes.role.copywriting')+',' if member.copywriting.present? %>
           <%= t('activerecord.attributes.role.quality_assurance')+',' if member.quality_assurance.present? %>
           <%= t('activerecord.attributes.role.product_management')+',' if member.product_management.present? %>
           <%= t('activerecord.attributes.role.back_end_development')+',' if member.back_end_development.present? %>
-          <%= t('activerecord.attributes.role.front_end_development')+'"'if member.front_end_development.present? %></td>
+          <%= t('activerecord.attributes.role.front_end_development')+','if member.front_end_development.present? %>
+          <%= member.custom_role if member.custom_role.present? %></td>
     </tr>
   </table>
 <% end %>
