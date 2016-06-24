@@ -34,10 +34,3 @@ ul {
   flex: 1 0 auto; /* 2 */
   width: 100%;
 }
-
-.siteContent::after {
-  content: '\00a0'; /* &nbsp; */
-  display: block;
-  height: 0px;
-  visibility: hidden;
-}
