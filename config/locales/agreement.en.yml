@@ -14,14 +14,14 @@ en:
         description: 'Product Description'
         market_size: 'Market Size'
         princing_model: 'Pricing Model'
-        actual_problem: 'Customer Problem'
+        actual_problem: "Customer's Problem"
         aditional_info: 'Additional Info'
         actual_solution: "Customer’s Existing Solution"
         aditional_rules: 'Additional Terms'
         proposed_solution: 'Proposed Solution'
         value_proposition: 'Unique Selling Point'
         mainly_competitors: 'Main Competitors'
-        customers_location: 'Customers Location'
+        customers_location: "Customer's Location"
         indirect_competitors: 'Indirect Competitors'
         how_to_validate_market: 'Market Validation'
         how_customers_spend_time: 'How Customers spend their time'

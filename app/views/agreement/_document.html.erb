@@ -21,9 +21,9 @@
 
 <p class="text-justify">The goal of this agreement is to clarify the roles and responsibilities for all team members while protecting the rights of everyone who collaborate on making a new software product. </p>
 
-<p class="text-justify">This agreement was created by using a free to use online service (<a href="http://www.getagreedon.com">www.getagreedon.com</a>) and has not been certified by any legal professional. Therefore, it should only be used as a starting point for potential co-founders and in lieu of any other official and legal agreement. </p>
+<p class="text-justify">This agreement was created by using a free-to-use online service (<a href="http://www.getagreedon.com">www.getagreedon.com</a>) and has not been certified by any legal professional. Therefore, it should only be used as a starting point for potential co-founders and in lieu of any other official and legal agreement. </p>
 
-<p class="text-justify">By signing this agreement all team members certify that they have read and agree with the Terms of Use of the AgreeOn service provided on this URL: <a href="http://www.getagreedon.com/terms-of-use">www.getagreedon.com/terms-of-use</a></p>
+<p class="text-justify">By signing this agreement all team members certify that they have read and agree with the Terms of Use of the AgreedOn service provided on this URL: <a href="http://www.getagreedon.com/terms-of-use">www.getagreedon.com/terms-of-use</a></p>
 
 <p class="text-justify">All team members who sign this agreement certify that the information they have provided are accurate and complete at the time of signing.</p>
 
@@ -34,7 +34,9 @@
 <p class="text-justify">
   <b>Product Name:</b> <span><%= @agreement.title %></span>
 </p>
-
+<p class="text-justify">
+  <b>Product Domain:</b> <span><%= @agreement.domain %></span>
+</p>
 <p class="text-justify">
   <b>Product Description:</b> <span><%= @agreement.description %></span>
 </p>
@@ -118,13 +120,15 @@
 
 <br>
 
-<h2 class="u-marginBot1s0">Agreement</h2>
+<h2 class="u-marginBot1s0">Agree</h2>
 <br>
 <% @agreement.roles.each do |member|%>
-  <p class="text-justify"  style="margin-bottom:30px">
+  <p class="text-justify"  style="margin-bottom:50px">
     <b><%= member.full_name %></b>
     <br>
+    <br>
     Signature:
+    <br>
     <br>
     Date:
   </p>
