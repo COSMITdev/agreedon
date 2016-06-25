@@ -1,9 +1,20 @@
 // # Page Footer
 // # =================================================================
-section.footer {
+footer {
   border-top: 1px solid $gray;
   color: $gray-dark;
   font-size: 0.8125rem;
+  display: block;
+
+  .footerNav-lft {
+    float: left;
+    display: inline-block;
+  }
+
+  .footerNav-rgt {
+    float: right;
+    display: inline-block;
+  }
 
   a {
     color: $gray-dark;
@@ -29,9 +40,8 @@ section.footer {
 }
 
 @media (max-width: 768px) {
-  section.footer {
+  footer {
     text-align: center;
-    margin-bottom: 30px;
 
     .footerBrand {
       padding-bottom: 5px;
@@ -42,8 +52,15 @@ section.footer {
       padding-bottom: 15px;
     }
 
-    .u-floatRgt {
-      float: none !important;
+    .footerNav-lft,
+    .footerNav-rgt {
+      float: none;
+      display: block;
+    }
+
+    .footerNav-rgt {
+      margin-right: 15px;
+      padding-bottom: 30px;
     }
   }
 }

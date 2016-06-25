@@ -1,18 +1,17 @@
-section.footer
+footer.footer
   .container-fluid
     .row
       .col-sm-10.u-centered
-        .row
-          .col-sm-6
-            = link_to 'AgreedOn', root_path, title: 'Agreedon', class: 'footerBrand'
-          .col-sm-6
-            .u-floatRgt
-              = link_to 'Terms of Use', terms_of_use_path, title: 'About us', class: 'footerLink'
-              = link_to 'About', about_path, title: 'About us', class: 'footerLink u-marginRgt15'
-              span.u-textGray-light
-                | Made with 
-                i.fa.fa-heart-o
-                |  by 
-                = link_to 'COSMIT', 'http://cosmit.me', title: 'Visit us!', class: 'u-linkInverse', target: '_blank'
-                |  & 
-                = link_to 'Product Buff', 'http://www.productbuff.com/rpp/', class: 'u-linkInverse', target: '_blank'
+        .footerNav-lft
+          = link_to 'AgreedOn', root_path, title: 'Agreedon', class: 'footerBrand'
+        .footerNav-rgt
+          = link_to 'Terms of Use', terms_of_use_path, title: 'About us', class: 'footerLink'
+          = link_to 'About', about_path, title: 'About us', class: 'footerLink u-marginRgt15'
+          span.u-textGray-light
+            | Made with 
+            i.fa.fa-heart-o
+            |  by 
+            = link_to 'COSMIT', 'http://cosmit.me', title: 'Visit us!', class: 'u-linkInverse', target: '_blank'
+            |  & 
+            = link_to 'Product Buff', 'http://www.productbuff.com/rpp/', class: 'u-linkInverse', target: '_blank'
+        .clearfix
