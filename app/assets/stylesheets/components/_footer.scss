@@ -59,8 +59,16 @@ footer {
     }
 
     .footerNav-rgt {
-      margin-right: 15px;
       padding-bottom: 30px;
+    }
+
+    .footerAbout {
+      display: block;
+      width: 100%;
+    }
+
+    .u-marginRgt15 {
+      margin-right: 0 !important;
     }
   }
 }
